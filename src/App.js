@@ -3,7 +3,7 @@ import Posts from './components/Posts'
 import Input from './components/Input'
 
 class App extends Component {
-  state = {subreddit: "cats"}
+  state = {subreddit: "moms"}
 
   submitted(data){
     this.setState({subreddit: data})
