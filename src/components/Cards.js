@@ -14,7 +14,7 @@ getCards(genre, page){
        this.setState({data: [...data, ...res.manga], loading: false, page, totalpages: Math.ceil(res.item_count/100)})
     })
     .catch(err=>{
-        this.setState({data: null, after: null, subreddit: null, error: err, loading: false})
+        this.setState({data: null, genre: null, error: err, loading: false})
     })
 }
 removeData(id){

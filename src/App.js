@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Genres from './components/Genres'
 import Cards from './components/Cards'
 import Input from './components/Input'
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Input callback={this.submitted.bind(this)}/>
+        <Genres/>
         <Cards genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
       </div>
     );
