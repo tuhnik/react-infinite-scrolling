@@ -31,7 +31,7 @@
     overflow: hidden;
     box-shadow: 2px 2px 12px 0px #c5c5c5;
     border-radius: 3px;
-    background: #80808021;
+    background: #f1f1f1;
     @include tablet {
         width: 100%;
         flex-direction: column;
@@ -111,6 +111,9 @@
         background: #2196F3;
         cursor: pointer;
     }
+    &.active {
+        background: #2196F3;
+      }
 }
 .genre:last-child {
     margin-top: auto;
@@ -118,13 +121,13 @@
 .loading {
     display: block;
     background: #efefef;
-    color: grey;
+    color: #2096f3;
     padding: 15px 20px;
     font-size: 2em;
     border: 1px solid gray;
     margin: auto;
     margin-bottom: 30px;
-    width: 175px;
+    width: 225px;
     text-transform: uppercase;
     font-weight: 700;
     margin-top: 10px;

@@ -52,7 +52,7 @@ render() {
      <>
       <div className="cards">
         {this.state.data && this.state.data.map((el, i)=>{
-                return <Card key={i} id={i} changeGenre= {this.props.changeGenre} removeData={this.removeData.bind(this)} el={el}/>
+                return <Card key={i} id={i} genreID={this.state.genre}changeGenre= {this.props.changeGenre} removeData={this.removeData.bind(this)} el={el}/>
         })}
       </div>
       {this.state.loading && <Loading className="loading" msg="fetching"/>}

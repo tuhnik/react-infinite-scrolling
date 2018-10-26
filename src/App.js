@@ -12,11 +12,14 @@ class App extends Component {
   }
   render() {
     return (
+  
       <div className="App">
-        <Input callback={this.submitted.bind(this)}/>
-        <Genres/>
+        {/* <Input callback={this.submitted.bind(this)}/> */}
+        <h3 className="header">🍙 Manga toplist</h3>
+        <Genres genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
         <Cards genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
       </div>
+   
     );
   }
 }

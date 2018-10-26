@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 class Card extends Component {
   render() {
-    const {el, id, removeData, changeGenre} = this.props
+    const {el, id, removeData, changeGenre, genreID} = this.props
     return <div className="card">
         <div className="close-card" onClick={()=>removeData(id)}>&times;</div>
         <div className="card-image">
@@ -12,7 +12,7 @@ class Card extends Component {
           <div className="synopsis">{el.synopsis}</div>
           <div className="genres">
           {el.genres.map((genre, i)=>{
-              return <p key = {i} onClick={()=>changeGenre(genre.mal_id)} className="genre">{genre.name}</p>
+              return <p key = {i} onClick={()=>changeGenre(genre.mal_id)} className={(genre.mal_id === genreID)?"genre active":"genre"}>{genre.name}</p>
           })}
           </div>
         </div>
