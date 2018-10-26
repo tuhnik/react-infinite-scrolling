@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
-import Posts from './components/Posts'
+import Cards from './components/Cards'
 import Input from './components/Input'
-
 class App extends Component {
   state = {genre: 1}
-
-  submitted(data){
-    this.setState({genre: data})
+  submitted(id){
+    this.setState({genre: id})
   }
-
+  changeGenre(id){
+    this.setState({genre: id})
+  }
   render() {
     return (
       <div className="App">
         <Input callback={this.submitted.bind(this)}/>
-        <Posts genre={this.state.genre}/>
+        <Cards genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
       </div>
     );
   }
 }
-
 export default App;

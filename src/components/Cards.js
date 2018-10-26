@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Card from './Card'
 import Loading from './Loading'
-class Posts extends Component {
-  
-state={genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
-getPosts(genre, page){
 
+class Cards extends Component {
+state={genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
+getCards(genre, page){
     this.setState({loading: true})
     fetch(`https://api.jikan.moe/v3/genre/manga/${genre}/${page}`).then(res=>res.json())
     .then(res=>{
@@ -18,7 +17,6 @@ getPosts(genre, page){
         this.setState({data: null, after: null, subreddit: null, error: err, loading: false})
     })
 }
-
 removeData(id){
     let data = this.state.data
     data.splice(id, 1)
@@ -27,42 +25,39 @@ removeData(id){
 componentWillReceiveProps (nprops){
     if(this.state.genre !== nprops.genre){
         this.setState({genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
-            this.getPosts(nprops.genre, 1)
+            this.getCards(nprops.genre, 1)
         })
     }
 }
 componentDidMount(){
-    this.getPosts(this.props.genre, this.state.page)
+    this.getCards(this.props.genre, this.state.page)
     this.scrollListener = window.addEventListener('scroll', (e) => {
         this.handleScroll(e)
       })
 }
 handleScroll(e){
     if (this.state.loading) return
-    let lastPost = document.querySelector('.posts > .card:last-child')
+    let lastPost = document.querySelector('.Cards > .card:last-child')
     var lastPostOffset = lastPost.offsetTop + lastPost.clientHeight
     var pageOffset = window.pageYOffset + window.innerHeight
     var bottomOffset = 20
     if (pageOffset > lastPostOffset - bottomOffset) {
         if(this.state.page < this.state.totalpages){
-            this.getPosts(this.state.genre, this.state.page)
-        }  
+            this.getCards(this.state.genre, this.state.page)
+        }
     }
 }
 render() {
     return (
-    
      <>
-      <div className="posts">
+      <div className="Cards">
         {this.state.data && this.state.data.map((el, i)=>{
-                return <Card key={i} id={i} removeData={this.removeData.bind(this)} el={el}/>
+                return <Card key={i} id={i} changeGenre= {this.props.changeGenre} removeData={this.removeData.bind(this)} el={el}/>
         })}
       </div>
-      {this.state.loading && <Loading className="loading" msg="fetching"/>}  
+      {this.state.loading && <Loading className="loading" msg="fetching"/>}
       </>
     );
   }
 }
-
-
-export default Posts;
+export default Cards;
