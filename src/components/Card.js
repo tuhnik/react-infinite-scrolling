@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 
 class Card extends Component {
- 
-  
+
+
   render() {
     const {el, id, removeData} = this.props
-    if(el.synopsis.length > 500) {
-        el.synopsis = el.synopsis.substring(0, 500) + "..."
-    }
+    // if(el.synopsis.length > 500) {
+    //     el.synopsis = el.synopsis.substring(0, 500) + "..."
+    // }
     return <div className="card">
         <div className="close-card" onClick={()=>removeData(id)}>&times;</div>
         <div className="card-image">
           <img src={el.image_url} alt = {el.title} />
         </div>
-        
+
         <div className="card-text">
           <div className="title">{el.title}</div>
           <div className="synopsis">{el.synopsis}</div>
@@ -24,7 +24,7 @@ class Card extends Component {
           </div>
         </div>
 
-        
+
 
       </div>;
   }
