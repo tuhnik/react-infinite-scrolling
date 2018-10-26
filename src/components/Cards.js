@@ -11,7 +11,7 @@ getCards(genre, page){
        if(res.error) throw Error(res.error)
        let page = this.state.page + 1
        let data = this.state.data
-       this.setState({data: [...data, ...res.manga], loading: true, page, totalpages: Math.ceil(res.item_count/100)})
+       this.setState({data: [...data, ...res.manga], loading: false, page, totalpages: Math.ceil(res.item_count/100)})
     })
     .catch(err=>{
         this.setState({data: null, genre: null, error: err, loading: false})
