@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 
-class Input extends Component {
+class Card extends Component {
  
+  
   render() {
-    const {el} = this.props
+    const {el, id, removeData} = this.props
     if(el.synopsis.length > 500) {
         el.synopsis = el.synopsis.substring(0, 500) + "..."
     }
     return <div className="card">
-    
+        <div className="close-card" onClick={()=>removeData(id)}>&times;</div>
         <div className="card-image">
           <img src={el.image_url} alt = {el.title} />
         </div>
@@ -29,4 +30,4 @@ class Input extends Component {
   }
 }
 
-export default Input;
+export default Card;

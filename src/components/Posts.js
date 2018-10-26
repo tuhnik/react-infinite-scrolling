@@ -6,9 +6,7 @@ class Posts extends Component {
 state={genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
 getPosts(genre, page){
 
-    
     this.setState({loading: true})
-
     fetch(`https://api.jikan.moe/v3/genre/manga/${genre}/${page}`).then(res=>res.json())
     .then(res=>{
        let page = this.state.page + 1
@@ -21,7 +19,11 @@ getPosts(genre, page){
     })
 }
 
-
+removeData(id){
+    let data = this.state.data
+    data.splice(id, 1)
+    this.setState({data})
+}
 componentWillReceiveProps (nprops){
     if(this.state.genre !== nprops.genre){
         this.setState({genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
@@ -53,7 +55,7 @@ render() {
      <>
       <div className="posts">
         {this.state.data && this.state.data.map((el, i)=>{
-                return <Card key={i} el={el}/>
+                return <Card key={i} id={i} removeData={this.removeData.bind(this)} el={el}/>
         })}
       </div>
       {this.state.loading && <Loading className="loading" msg="fetching"/>}  
