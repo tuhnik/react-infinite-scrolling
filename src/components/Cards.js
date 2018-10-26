@@ -8,9 +8,9 @@ getCards(genre, page){
     this.setState({loading: true})
     fetch(`https://api.jikan.moe/v3/genre/manga/${genre}/${page}`).then(res=>res.json())
     .then(res=>{
+       if(res.error) throw Error(res.error)
        let page = this.state.page + 1
        let data = this.state.data
-       console.log(Math.ceil(res.item_count/100))
        this.setState({data: [...data, ...res.manga], loading: false, page, totalpages: Math.ceil(res.item_count/100)})
     })
     .catch(err=>{
@@ -37,7 +37,7 @@ componentDidMount(){
 }
 handleScroll(e){
     if (this.state.loading) return
-    let lastPost = document.querySelector('.Cards > .card:last-child')
+    let lastPost = document.querySelector('.cards > .card:last-child')
     var lastPostOffset = lastPost.offsetTop + lastPost.clientHeight
     var pageOffset = window.pageYOffset + window.innerHeight
     var bottomOffset = 20
@@ -50,12 +50,13 @@ handleScroll(e){
 render() {
     return (
      <>
-      <div className="Cards">
+      <div className="cards">
         {this.state.data && this.state.data.map((el, i)=>{
                 return <Card key={i} id={i} changeGenre= {this.props.changeGenre} removeData={this.removeData.bind(this)} el={el}/>
         })}
       </div>
       {this.state.loading && <Loading className="loading" msg="fetching"/>}
+      {this.state.error && <div className="error">{"Error: " + this.state.error.message}</div>}
       </>
     );
   }
