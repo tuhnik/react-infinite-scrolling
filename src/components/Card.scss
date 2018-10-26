@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 10px;
   }
 
 .card {
@@ -12,16 +13,26 @@
     overflow: hidden;
     box-shadow: 2px 2px 12px 0px #c5c5c5;
     border-radius: 3px;
-    background: #80808021
+    background: #80808021;
+    @include mobile {
+        width: 100%;
+        flex-direction: column;
+      }
+    @include tablet{
+        width: 100%;
+        flex-direction: row;
+      }
 }
 .card-image {
     padding: 10px;
     display: flex;
+    max-width: 40%;
     flex-direction: column;
-   
 }
 
-
+.card-image img {
+    
+}
 
 .title {
     margin: 10px 0px;
