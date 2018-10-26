@@ -1,0 +1,78 @@
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+.card {
+    border: 1px solid gray;
+    display: flex;
+    margin: 10px;
+    width: 30%;
+    overflow: hidden;
+    box-shadow: 2px 2px 12px 0px #c5c5c5;
+    border-radius: 3px;
+    background: #80808021
+}
+.card-image {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+
+
+.title {
+    margin: 10px 0px;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 0px 5px;
+}
+.synopsis {
+    padding: 5px;
+    padding-right: 12px;
+    margin-bottom: auto;
+}
+.card-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.genres {
+    margin: 5px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+.genre {
+    display: inline-block;
+    border: 1px solid gray;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background: gray;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.genre:last-child {
+    margin-top: auto;
+}
+
+.loading {
+    display: block;
+    background: #efefef;
+    color: grey;
+    padding: 15px 20px;
+    font-size: 2em;
+    border: 1px solid gray;
+    margin: auto;
+    margin-bottom: 20px;
+    width: 175px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px;
+    box-shadow: 2px 2px 12px 0px #c5c5c5;
+    border-radius: 3px;
+}

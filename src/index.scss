@@ -1,3 +1,6 @@
+@import 'components/Card';
+@import './sass/reset';
+@import './sass/breakpoints';
 body {
   margin: 0;
   padding: 0;
@@ -6,4 +9,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  margin: 0 auto;
+  padding: 0 40px;
+  @include mobile {
+  padding: 0 20px;
+  }
+}
+
+.input {
+  width: 40%;
+  font-size: 1.5rem;
+  padding: 5px;
+  margin: 40px auto;
+  border: 1px solid gray;
+  border-radius: 2px;
 }
