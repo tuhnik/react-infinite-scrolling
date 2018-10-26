@@ -8,9 +8,9 @@ class Input extends Component {
         el.synopsis = el.synopsis.substring(0, 500) + "..."
     }
     return <div className="card">
+    
         <div className="card-image">
           <img src={el.image_url} alt = {el.title} />
-          
         </div>
         
         <div className="card-text">
@@ -22,6 +22,9 @@ class Input extends Component {
           })}
           </div>
         </div>
+
+        
+
       </div>;
   }
 }
