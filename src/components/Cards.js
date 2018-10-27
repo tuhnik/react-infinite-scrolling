@@ -3,15 +3,15 @@ import Card from './Card'
 import Loading from './Loading'
 
 class Cards extends Component {
-state={genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
-getCards(genre, page){
+state={type: "manga",genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
+getCards(type, genre, page){
     this.setState({loading: true})
-    fetch(`https://api.jikan.moe/v3/genre/manga/${genre}/${page}`).then(res=>res.json())
+    fetch(`https://api.jikan.moe/v3/genre/${type}/${genre}/${page}`).then(res=>res.json())
     .then(res=>{
        if(res.error) throw Error(res.error)
        let page = this.state.page + 1
        let data = this.state.data
-       this.setState({data: [...data, ...res.manga], loading: false, page, totalpages: Math.ceil(res.item_count/100)})
+       this.setState({data: [...data, ...res[type]], type, loading: false, page, totalpages: Math.ceil(res.item_count/100)})
     })
     .catch(err=>{
         this.setState({data: null, genre: null, error: err, loading: false})
@@ -24,13 +24,13 @@ removeData(id){
 }
 componentWillReceiveProps (nprops){
     if(this.state.genre !== nprops.genre){
-        this.setState({genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
-            this.getCards(nprops.genre, 1)
+        this.setState({type: nprops.type, genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
+            this.getCards(nprops.type, nprops.genre, 1)
         })
     }
 }
 componentDidMount(){
-    this.getCards(this.props.genre, this.state.page)
+    this.getCards(this.props.type, this.props.genre, this.state.page)
     this.scrollListener = window.addEventListener('scroll', (e) => {
         this.handleScroll(e)
       })
@@ -43,7 +43,7 @@ handleScroll(e){
     var bottomOffset = 20
     if (pageOffset > lastPostOffset - bottomOffset) {
         if(this.state.page < this.state.totalpages){
-            this.getCards(this.state.genre, this.state.page)
+            this.getCards(this.state.type, this.state.genre, this.state.page)
         }
     }
 }
