@@ -23,7 +23,7 @@ removeData(id){
     this.setState({data})
 }
 componentWillReceiveProps (nprops){
-    if(this.state.genre !== nprops.genre){
+    if(this.state.genre !== nprops.genre || this.state.type !== nprops.type){
         this.setState({type: nprops.type, genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
             this.getCards(nprops.type, nprops.genre, 1)
         })

@@ -41,7 +41,5 @@ export default [
     { "psychological": 40 },
     { "thriller": 41 },
     { "seinen": 42 },
-    { "josei": 43 },
-    { "doujinshi": 43 },
-    { "gender bender": 44 }
+    { "josei": 43 }
   ];
