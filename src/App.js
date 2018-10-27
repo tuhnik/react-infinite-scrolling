@@ -18,6 +18,9 @@ class App extends Component {
   }
   render() {
     return (
+      <>
+      {this.state.type === "manga" && <div className="mangabg"></div>}
+      {this.state.type === "anime" && <div className="animebg"></div>}
       <div className="App">
         <h3 className="header"> 
           <p className={this.state.type === "manga"?"active":""} onClick={this.changeToManga.bind(this)}>Manga</p>
@@ -27,7 +30,7 @@ class App extends Component {
         <Genres genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
         <Cards genre={this.state.genre} type={this.state.type}changeGenre={this.changeGenre.bind(this)}/>
       </div>
-   
+   </>
     );
   }
 }
