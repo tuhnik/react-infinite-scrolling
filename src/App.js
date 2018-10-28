@@ -17,18 +17,18 @@ class App extends Component {
     this.setState({type: "anime"})
   }
   render() {
+    const {type, genre} = this.state
     return (
-      <>
-      {this.state.type === "manga" && <div className="mangabg"></div>}
-      {this.state.type === "anime" && <div className="animebg"></div>}
+    <>
+      <div className={type==="manga"?"bg mangabg":"bg animebg"}></div>
       <div className="App">
         <h3 className="header"> 
-          <p className={this.state.type === "manga"?"active":""} onClick={this.changeToManga.bind(this)}>Manga</p>
+          <p className={type === "manga"?"active":""} onClick={this.changeToManga.bind(this)}>Manga</p>
           <p className="separator"></p>
-          <p className={this.state.type === "anime"?"active":""} onClick={this.changeToAnime.bind(this)}>Anime</p>
+          <p className={type === "anime"?"active":""} onClick={this.changeToAnime.bind(this)}>Anime</p>
         </h3>
-        <Genres genre={this.state.genre} changeGenre={this.changeGenre.bind(this)}/>
-        <Cards genre={this.state.genre} type={this.state.type}changeGenre={this.changeGenre.bind(this)}/>
+        <Genres genre={genre} changeGenre={this.changeGenre.bind(this)}/>
+        <Cards genre={genre} type={type}changeGenre={this.changeGenre.bind(this)}/>
       </div>
    </>
     );

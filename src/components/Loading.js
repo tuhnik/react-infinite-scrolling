@@ -11,7 +11,6 @@ class Loading extends Component {
         else{
             this.setState({dots: ""})
         }
-
     }, 200);
   }
   componentWillUnmount() {
@@ -21,7 +20,7 @@ class Loading extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        {this.props.msg + this.state.dots}
+         <div> {this.props.msg + this.state.dots}</div> 
       </div>
     );
   }

@@ -42,10 +42,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
   p {
     font-family: 'Righteous', cursive;
     cursor: pointer;
     color: #0000000a;
+    &:hover:not(.active):not(.separator){
+      color: #0000000a;
+      text-shadow: 3px 3px 6px #808080;
+    }
   }
   .active {
     color: #4c4c4c;
@@ -96,18 +101,17 @@ body {
   }
 }
 
-.mangabg {
-  height: 100%;
-  width: 100%;
-  z-index: -300;
-  position: fixed;
-  background: #ffc1071f
-}
 
-.animebg {
+
+.bg {
   height: 100%;
   width: 100%;
   z-index: -300;
   position: fixed;
-  background:  #2196f31c;
+  &.animebg {
+    background:  #2196f31c;
+  }
+  &.mangabg {
+    background: #ffc1071f;
+  }
 }

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 class Input extends Component {
   state = {text: ""}
- 
   submitted(evt){
     if(evt.key === "Enter"){
         this.props.callback(this.state.text)
