@@ -5,8 +5,14 @@
 @import 'components/Header';
 @import 'components/Loading';
 @import 'components/Genres';
-
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@font-face {
+  font-family: 'Righteous';
+  src: url('sass/fonts/Righteous-Regular.ttf');
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url('sass/fonts/Roboto-Medium.ttf');
+}
 
 * {
   box-sizing: border-box;
@@ -27,6 +33,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: url("./images/bg.jpg");
   background-attachment: fixed;
+  font-family: "Righteous", cursive;
 }
 .App {
   display: flex;

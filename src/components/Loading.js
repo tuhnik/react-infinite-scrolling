@@ -11,6 +11,7 @@ class Loading extends Component {
         else{
             this.setState({dots: ""})
         }
+
     }, 200);
   }
   componentWillUnmount() {
