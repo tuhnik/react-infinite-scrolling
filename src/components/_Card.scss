@@ -59,15 +59,25 @@
 }
 
 .score {
-    color: #4CAF50;
-    
-    
-    
+    color: #4CAF50; 
   &:before {
     padding-right: 5px;
+    padding-left: 5px;
+    display: inline;
     @extend .fas;
     content: "\f005";
   }
+}
+
+.members{
+    color: #3F51B5;
+    margin-left: auto;
+    &:before {
+        display: inline;
+      padding-right: 5px;
+      @extend .fas;
+      content: "\f06e";
+    }
 }
 
 .synopsis {
