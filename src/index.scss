@@ -1,10 +1,13 @@
 @import './sass/reset';
 @import './sass/breakpoints';
+@import 'sass/fonts/font-awesome/fontawesome.scss';
+@import 'sass/fonts/font-awesome/solid.scss';
 @import 'components/Card';
 @import 'components/Cards';
 @import 'components/Header';
 @import 'components/Loading';
 @import 'components/Genres';
+
 @font-face {
   font-family: 'Righteous';
   src: url('sass/fonts/Righteous-Regular.ttf');

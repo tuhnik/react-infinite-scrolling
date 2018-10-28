@@ -47,7 +47,7 @@
     font-weight: 600;
     font-size: 1.5rem;
     padding: 0px 5px;
-    padding-right: 25px;
+    padding-right: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid #808080;
     border-image: linear-gradient(to left, #808080 0%, #f2f2f2 100%);
@@ -60,6 +60,14 @@
 
 .score {
     color: #4CAF50;
+    
+    
+    
+  &:before {
+    padding-right: 5px;
+    @extend .fas;
+    content: "\f005";
+  }
 }
 
 .synopsis {
