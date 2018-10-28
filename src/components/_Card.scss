@@ -1,10 +1,3 @@
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
 .error {
     text-align: center;
     font-size: 2rem;
@@ -63,7 +56,6 @@
 .title {
     margin: 10px 0px;
     font-weight: 600;
-    /* max-width: 90%; */
     font-size: 1.5rem;
     padding: 0px 5px;
     padding-right: 25px;
@@ -82,50 +74,6 @@
     flex-direction: column;
     width: 100%;
 }
-.genres {
-    margin: 5px;
-    display: flex;
-    flex-flow: row wrap-reverse;
-    justify-content: flex-end;
-    align-items: flex-start;
-    align-content: flex-start;
-}
-.genre {
-    margin-right: 4px;
-    margin-bottom: 4px;
-    background: #7f8992;
-    color: white;
-    border-radius: 3px;
-    padding: 5px;
-    box-shadow: 1px 1px 5px #00000066;
-    &:hover{
-        background: #2196F3;
-        cursor: pointer;
-    }
-    &.active {
-        background: #2196F3;
-      }
-}
-.genre:last-child {
-    margin-top: auto;
-}
-.loading {
-    animation: slide-down 0.5s ease;
-    display: block;
-    background: #efefef;
-    color: #2096f3;
-    padding: 15px 20px;
-    font-size: 2em;
-    border: 1px solid gray;
-    margin: auto;
-    margin-bottom: 30px;
-    width: 225px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin-top: 10px;
-    box-shadow: 2px 2px 12px 0px #c5c5c5;
-    border-radius: 3px;
-}
 
 
 @keyframes slide-up {
@@ -139,13 +87,3 @@
     }
 }
 
-@keyframes slide-down{
-    0% {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-}

@@ -1,0 +1,28 @@
+.loading {
+    animation: slide-down 0.5s ease;
+    display: block;
+    background: #efefef;
+    color: #2096f3;
+    padding: 15px 20px;
+    font-size: 2em;
+    border: 1px solid gray;
+    margin: auto;
+    margin-bottom: 30px;
+    width: 225px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 10px;
+    box-shadow: 2px 2px 12px 0px #c5c5c5;
+    border-radius: 3px;
+}
+
+@keyframes slide-down{
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

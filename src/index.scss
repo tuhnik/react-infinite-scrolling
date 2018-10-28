@@ -1,9 +1,18 @@
 @import './sass/reset';
 @import './sass/breakpoints';
 @import 'components/Card';
+@import 'components/Cards';
+@import 'components/Header';
+@import 'components/Loading';
+@import 'components/Genres';
+
 @import url('https://fonts.googleapis.com/css?family=Righteous');
+
 * {
   box-sizing: border-box;
+}
+html {
+  overflow-y:scroll;
 }
 html, body, #root {
   height: 100%;
@@ -29,48 +38,7 @@ body {
   padding: 0 0;
   }
 }
-.header {
- 
-  font-weight: 600;
-  font-size: 4rem;
-  color: #404040;
-  font-family: sans-serif;
-  text-align: center;
-  text-shadow: 3px 3px 6px #9e9e9e;
-  padding: 50px;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-  p {
-    font-family: 'Righteous', cursive;
-    cursor: pointer;
-    color: #0000000a;
-    &:hover:not(.active):not(.separator){
-      color: #0000000a;
-      text-shadow: 3px 3px 6px #808080;
-    }
-  }
-  .active {
-    color: #4c4c4c;
-    transition: all .5s;
 
-  }
-  .separator {
-    margin: 10px 10px;
-    cursor: auto;
-    text-shadow: none;
-    color: #7f8992b8;
-    &:after{
-      content:"🐹"
-    }
-  }
-  @include mobile {
-     font-size: 3rem;
-     flex-direction: column;
-   }
-}
 .input {
   width: 40%;
   font-size: 1.5rem;
@@ -79,28 +47,6 @@ body {
   border: 1px solid gray;
   border-radius: 2px;
 }
-
-.all-genres {
-  display: flex;
-  justify-content: center;
-  flex-flow: wrap;
-  box-shadow: 2px 2px 12px 0px #c5c5c5;
-  background: #ffffffa3;
-  align-items: flex-start;
-  padding: 20px;
-  border-radius: 3px;
-  border: 1px solid gray;
-  align-content: flex-start;
-  margin: 10px 10px;
-}
-
-.all-genres .genre{
-  text-transform: capitalize;
-  &.active {
-    background: #2196F3;
-  }
-}
-
 
 
 .bg {

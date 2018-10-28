@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Genres from './components/Genres'
 import Cards from './components/Cards'
+import Header from './components/Header'
 
 class App extends Component {
   state = {type: "manga", genre: 1}
@@ -22,11 +23,7 @@ class App extends Component {
     <>
       <div className={type==="manga"?"bg mangabg":"bg animebg"}></div>
       <div className="App">
-        <h3 className="header"> 
-          <p className={type === "manga"?"active":""} onClick={this.changeToManga.bind(this)}>Manga</p>
-          <p className="separator"></p>
-          <p className={type === "anime"?"active":""} onClick={this.changeToAnime.bind(this)}>Anime</p>
-        </h3>
+        <Header type={type} changeToManga={this.changeToManga.bind(this)} changeToAnime={this.changeToAnime.bind(this)}/>
         <Genres genre={genre} changeGenre={this.changeGenre.bind(this)}/>
         <Cards genre={genre} type={type}changeGenre={this.changeGenre.bind(this)}/>
       </div>
