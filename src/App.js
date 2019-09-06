@@ -25,7 +25,7 @@ class App extends Component {
       <div className="App">
         <Header type={type} changeToManga={this.changeToManga.bind(this)} changeToAnime={this.changeToAnime.bind(this)}/>
         <Genres genre={genre} changeGenre={this.changeGenre.bind(this)}/>
-        <Cards genre={genre} type={type}changeGenre={this.changeGenre.bind(this)}/>
+        <Cards genre={genre} type={type} changeGenre={this.changeGenre.bind(this)}/>
       </div>
    </>
     );
