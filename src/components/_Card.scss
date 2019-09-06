@@ -55,9 +55,6 @@
     border-image-slice: 1;
     @include mobile {
         flex-direction: column;
-        & div{
-            margin-bottom: 5px;
-        }
     }
 }
 
