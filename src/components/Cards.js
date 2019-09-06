@@ -22,13 +22,14 @@ removeData(id){
     data.splice(id, 1)
     this.setState({data})
 }
-componentWillReceiveProps (nprops){
+UNSAFE_componentWillReceiveProps (nprops){
     if(this.state.genre !== nprops.genre || this.state.type !== nprops.type){
         this.setState({type: nprops.type, genre: nprops.genre, data: [], error: null, page: 1}, ()=>{
             this.getCards(nprops.type, nprops.genre, 1)
         })
     }
 }
+
 componentDidMount(){
     this.getCards(this.props.type, this.props.genre, this.state.page)
     this.scrollListener = window.addEventListener('scroll', (e) => {

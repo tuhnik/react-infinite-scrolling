@@ -1,7 +1,7 @@
 @import './sass/reset';
 @import './sass/breakpoints';
-@import 'sass/fonts/font-awesome/fontawesome.scss';
-@import 'sass/fonts/font-awesome/solid.scss';
+@import './sass/fonts/font-awesome/fontawesome.scss';
+@import './sass/fonts/font-awesome/solid.scss';
 @import 'components/Card';
 @import 'components/Cards';
 @import 'components/Header';
@@ -10,11 +10,11 @@
 
 @font-face {
   font-family: 'Righteous';
-  src: url('sass/fonts/Righteous-Regular.ttf');
+  src: url('./sass/fonts/Righteous-Regular.ttf');
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('sass/fonts/Roboto-Medium.ttf');
+  src: url('./sass/fonts/Roboto-Medium.ttf');
 }
 
 * {

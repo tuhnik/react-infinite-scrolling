@@ -8,10 +8,9 @@ class Card extends Component {
         </div>
         <div className="card-text">
           <div className="title-container">
-            {" "}
             <div className="title">{el.title}</div>
-            {el.members && <div className="members">{el.members}</div>}
-            {el.score && <div className="score">{el.score}</div> }      
+            {el.members && <div className="members"><span>{el.members}</span></div>}
+            {el.score && <div className="score"><span>{el.score}</span></div> }      
           </div>
           <div className="synopsis">{el.synopsis}</div>
           <div className="genres">
