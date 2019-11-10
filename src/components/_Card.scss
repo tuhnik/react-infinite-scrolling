@@ -1,70 +1,75 @@
 .error {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 500;
-    color: orangered;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: orangered;
 }
 
 .card {
-    animation: slide-up 1s ease;
-    position: relative;
-    border: 1px solid gray;
-    display: flex;
-    margin: 10px;
+  animation: slide-up 1s ease;
+  position: relative;
+  border: 1px solid gray;
+  display: flex;
+  margin: 10px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 2px 2px 12px 0px #c5c5c5;
+  border-radius: 3px;
+  background: #f1f1f1;
+  @include tablet {
     width: 100%;
-    overflow: hidden;
-    box-shadow: 2px 2px 12px 0px #c5c5c5;
-    border-radius: 3px;
-    background: #f1f1f1;
-    @include tablet {
-        width: 100%;
-
-      }
-    @include mobile {
-        width: 100%;
-        flex-direction: column;
-      }
+  }
+  @include mobile {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .card-image {
-    padding: 10px 0px 10px 10px;
-    @include mobile {
-        max-width: 100%;
-        padding: 10px;
-      }
+  padding: 10px 0px 10px 10px;
+  @include mobile {
+    max-width: 100%;
+    padding: 10px;
+  }
 }
 .card-image img {
-    border: 1px solid transparent;
+  border: 1px solid transparent;
 
-    @include mobile {
-        width: 100%;
-    }
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .title-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0px;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 0px 5px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #808080;
-    border-image: linear-gradient(to left, #808080 0%, #f2f2f2 100%);
-    border-image-slice: 1;
-    @include mobile {
-        flex-direction: column;
-        margin: 0;
-    }
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0px 5px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #808080;
+  border-image: linear-gradient(to left, #808080 0%, #f2f2f2 100%);
+  border-image-slice: 1;
+  @include mobile {
+    flex-direction: column;
+    margin: 0;
+  }
 }
 
 .title {
-       color: black;
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .volumes {
+    color: #7f8992;
+  }
 }
 
 .score {
-    color: #4CAF50;
+  color: #4caf50;
   &:before {
     display: inline;
     @extend .fas;
@@ -75,44 +80,42 @@
   }
 }
 
-.members{
-    color: #3F51B5;
-    margin-left: auto;
-    &:before {
-      display: inline;
-      @extend .fas;
-      content: fa-content($fa-var-eye);
-    }
-    @include mobile {
-        margin: 0;
-    }
-    span {
-        padding: 0 0.25em ;
-    }
+.members {
+  color: #3f51b5;
+  margin-left: auto;
+  &:before {
+    display: inline;
+    @extend .fas;
+    content: fa-content($fa-var-eye);
+  }
+  @include mobile {
+    margin: 0;
+  }
+  span {
+    padding: 0 0.25em;
+  }
 }
 
 .synopsis {
-    font-family: "Roboto";
-    padding: 5px;
-    padding-right: 12px;
-    margin-bottom: auto;
+  font-family: "Roboto";
+  padding: 5px;
+  padding-right: 12px;
+  margin-bottom: auto;
 }
-.card-text{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 10px;
+.card-text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 10px;
 }
-
 
 @keyframes slide-up {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-

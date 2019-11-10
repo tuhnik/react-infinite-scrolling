@@ -14,6 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "rm -rf 'Y:\\node\\server\\portfolio\\top' && cp -r '.\\build' 'Y:\\node\\server\\portfolio\\top'",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
