@@ -6,6 +6,7 @@ class Cards extends Component {
 state={type: "manga",genre: 1, page: 1, totalpages: 1,data: [], error: null, loading: false}
 getCards(type, genre, page){
     this.setState({loading: true})
+    //https://api.jikan.moe/v3/search/manga?genre=40&order_by=chapters
     fetch(`https://api.jikan.moe/v3/genre/${type}/${genre}/${page}`).then(res=>res.json())
     .then(res=>{
        if(res.error) throw Error(res.error)

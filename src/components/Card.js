@@ -11,8 +11,9 @@ class Card extends Component {
         <div className="card-text">
           <div className="title-container">
             <div className="title">
-            <a href={el.url}>{el.title}</a>
+            <a href={el.url}>{el.title}
             {el.volumes?<span className="volumes"> ({el.volumes}&nbsp;volumes)</span>:""}
+            </a>
             </div>
             {el.members && <div className="members"><span>{el.members}</span></div>}
             {el.score && <div className="score"><span>{el.score}</span></div> }      
